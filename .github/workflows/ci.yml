@@ -1,0 +1,150 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'sprint/*'
+      - 'Sprint/*'
+  pull_request:
+    branches:
+      - 'main'
+      - 'sprint/*'
+      - 'Sprint/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: mydatabase
+          POSTGRES_USER: myuser
+          POSTGRES_PASSWORD: mypassword
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgres://myuser:mypassword@localhost:5432/mydatabase
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+
+      - name: Install pnpm
+        run: npm install -g pnpm@9.1.0
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check TypeScript files
+        run: pnpm tsc --noEmit
+
+      - name: Lint and format TypeScript and JavaScript files
+        run: |
+          find . -type f -not -path "./node_modules/*" \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" \) | xargs pnpm eslint --fix
+          find . -type f -not -path "./node_modules/*" \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" \) | xargs pnpm prettier --write
+
+      - name: Format Markdown and JSON files
+        run: |
+          find . -type f -not -path "./node_modules/*" \( -name "*.md" -o -name "*.json" \) | xargs pnpm prettier --write
+
+      - name: Generate Prisma Client
+        if: hashFiles('prisma/schema.prisma') != ''
+        run: npx prisma generate --schema=prisma/schema.prisma
+
+      - name: Run migrations
+        if: hashFiles('prisma/schema.prisma') != ''
+        run: npx prisma migrate deploy --schema=prisma/schema.prisma
+
+      - name: Run unit tests
+        id: unit-tests
+        run: |
+          extract_numbers() {
+            echo "$1" | awk -F '/' '{print $2}' | grep -o '[0-9]*'
+          }
+ 
+          run_pnpm_test() {
+            number=$(echo "$1" | sed 's/^0*//')
+            if [ "$number" -ge 1 ] && [ "$number" -le 22 ]; then
+              echo "Running tests for feature number: $number"
+              pnpm test-$number
+            fi
+          }
+
+          run_sprint_test() {
+            sprint_number=$(echo "$1" | sed 's/^0*//')
+            if [ "$sprint_number" -ge 1 ] && [ "$sprint_number" -le 22 ]; then
+              echo "Running sprint tests for sprint number: $sprint_number"
+              pnpm test-sprint-$sprint_number
+            fi
+          }
+
+          should_run_tests() {
+            pr_title="$1"
+            source_branch="$2"
+            target_branch="$3"
+            pr_title_numbers=$(extract_numbers "$pr_title")
+            source_branch_numbers=$(extract_numbers "$source_branch")
+            target_branch_numbers=$(extract_numbers "$target_branch")
+
+            echo "PR Title: $pr_title"
+            echo "Source Branch: $source_branch"
+            echo "Target Branch: $target_branch"
+            echo "PR Title Numbers: $pr_title_numbers"
+            echo "Source Branch Numbers: $source_branch_numbers"
+            echo "Target Branch Numbers: $target_branch_numbers"
+
+            for number in $pr_title_numbers $source_branch_numbers; do
+              if [[ "$target_branch" != "sprint/$number" && "$target_branch" != "Sprint/$number" ]]; then
+                run_pnpm_test $number
+              else
+                echo "Skipping tests for sprint number: $number"
+              fi
+            done
+
+            for sprint_number in $target_branch_numbers; do
+              if [[ "$target_branch" == "sprint/$sprint_number" || "$target_branch" == "Sprint/$sprint_number" ]]; then
+                run_sprint_test $sprint_number
+              fi
+            done
+          }
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            pr_title="${{ github.event.pull_request.title }}"
+            source_branch="${{ github.event.pull_request.head.ref }}"
+            target_branch="${{ github.event.pull_request.base.ref }}"
+            should_run_tests "$pr_title" "$source_branch" "$target_branch"
+          else
+            ref_name="${{ github.ref_name }}"
+            ref_name_numbers=$(extract_numbers "$ref_name")
+
+            if [[ "$ref_name" == "sprint/"* || "$ref_name" == "Sprint/"* ]]; then
+              for sprint_number in $ref_name_numbers; do
+                run_sprint_test $sprint_number
+              done
+            else
+              for number in $ref_name_numbers; do
+                run_pnpm_test $number
+              done
+            fi
+          fi
