@@ -1,0 +1,35 @@
+{
+  "landing": {
+    "topbar": {
+      "brand": "Devstock.pl",
+      "login": "Sign in",
+      "register": "Register"
+    },
+    "hero": {
+      "title": "Codebusters _/>",
+      "by": "by",
+      "brand": "Devstock",
+      "subtitle": "...a platform for effective, fast and engaging programming learning through practice and gamification",
+      "ctaStart": "Start learning →",
+      "ctaAcademy": "Explore"
+    },
+    "content": {
+      "what": {
+        "title": "What can you learn?",
+        "bodyFirst": "Codebusters will let you explore and practice Front-end technologies such as HTML5, CSS and JavaScript!",
+        "bodySecond": "You can solve challenges, climb the leaderboard, earn achievements and proficiency levels in various technologies, and even export your results and show them off!"
+      },
+      "trust": {
+        "title": "Trusted by 400+ learners across the country",
+        "body": "We build educational products, run a programming academy, create software for commercial clients, provide body leasing, and promote sport",
+        "ctaMeet": "Meet us >"
+      }
+    },
+    "footer": {
+      "site": "Devstock.pl",
+      "privacy": "Privacy policy",
+      "contact": "Contact",
+      "copyright": "Devstock © 2025"
+    }
+  }
+}
