@@ -4,12 +4,21 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 import logo from "../../../../public/brand/logo.png";
 
 export const SignOutTopBar = () => {
   const t = useTranslations("landing.topbar");
   const locale = useLocale();
+  const pathname = usePathname();
+
   const homeHref = `/${locale}/landing`;
+  const registerHref = `/${locale}/register`;
+  const loginrHref = `/${locale}/login`;
+
+  const isRegisterPage = pathname?.includes("/register");
+  const isLoginPage = pathname?.includes("/login");
 
   return (
     <header className="bg-gray">
@@ -19,13 +28,9 @@ export const SignOutTopBar = () => {
           aria-label={t("brand")}
           className="inline-flex items-center"
         >
-          <Image
-            src={logo}
-            alt={t("brand")}
-            priority
-            className="h-11 w-auto"
-          />
+          <Image src={logo} alt={t("brand")} priority className="h-11 w-auto" />
         </Link>
+
         <nav className="flex items-center gap-10">
           <button
             type="button"
@@ -34,21 +39,27 @@ export const SignOutTopBar = () => {
           >
             {t("brand")}
           </button>
+
           <span className="font-medium">|</span>
-          <button
-            type="button"
-            disabled
-            className="cursor-not-allowed font-medium"
+
+          <Link
+            href={loginrHref}
+            className={clsx(
+              "font-medium",
+              isLoginPage ? "text-orange" : "text-white"
+            )}
           >
             {t("login")}
-          </button>
-          <button
-            type="button"
-            disabled
-            className="w-37.5 cursor-not-allowed font-medium bg-blue rounded-lg py-2 px-3 gap-2"
+          </Link>
+          <Link
+            href={registerHref}
+            className={clsx(
+              "w-37.5 font-medium rounded-lg py-2 px-3 gap-2 text-white text-center transition",
+              isRegisterPage ? "bg-orange" : "bg-blue"
+            )}
           >
             {t("register")}
-          </button>
+          </Link>
         </nav>
       </div>
     </header>

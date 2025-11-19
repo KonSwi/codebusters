@@ -31,5 +31,36 @@
       "contact": "Kontakt",
       "copyright": "Devstock © 2025"
     }
+  },
+  "register": {
+    "title": "Zarejestruj się",
+    "nickname": "Pseudonim",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Twój e-mail",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "acceptTerms": "Akceptuję",
+    "termsLink": "zasady i warunki",
+    "submit": "Zarejestruj się",
+    "alreadyHaveAccount": "Już masz konto?",
+    "loginLink": "Zaloguj się",
+    "modal": {
+      "title": "Potwierdź rejestrację!",
+      "body": "Przesłalismy link aktywacyjny na adres {email}, prosimy o weryfikację :)",
+      "failure": "Mail aktywacyjny nie dotarł?",
+      "resend": "Prześlij ponownie"
+    }
+  },
+  "login": {
+    "title": "Zaloguj się",
+    "email": "Twój e-mail",
+    "password": "Hasło",
+    "rememberMe": "Zapamiętaj mnie",
+    "submit": "Zaloguj się",
+    "forgotPassword": "Nie pamiętam hasła",
+    "loginWithGithub": "Logowanie się przez Github",
+    "noAccount": "Nie masz jeszcze konta?",
+    "register": "Zarejestruj się"
   }
 }

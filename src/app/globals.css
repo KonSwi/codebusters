@@ -9,11 +9,18 @@
   --color-red: #f74746;
   --color-grayBorder: #e5e7eb;
   --color-grayLight: #6b7280;
+  --color-formGray: #374151;
+  --color-formBorder: #4B5563;
+  --color-formPlaceholder: #9CA3AF;
+  --color-orange: #F5A22E;
   --font-sans: "Lexend Deca", Helvetica, sans-serif;
   --text-titleBigFont: 64px;
   --text-titleSmallFont: 32px;
   --text-articleBigFont: 24px;
   --text-articleSmallFont: 20px;
+  --text-formFont: 14px;
+  --text-formErrorFont: 12px;
+
 }
 
 body {
