@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Button } from "@/shared/components/Button";
 
 export const Footer = () => {
   const t = useTranslations("landing.footer");
@@ -12,32 +13,17 @@ export const Footer = () => {
     >
       <div className="container flex h-full items-center justify-between gap-3 flex-row px-10">
         <nav className="flex items-center gap-10">
-          <button
-            type="button"
-            disabled
-            aria-disabled="true"
-            className="cursor-not-allowed font-medium"
-          >
+          <Button variant="onlyText" disabled>
             {t("site")}
-          </button>
+          </Button>
           <span className="font-medium">|</span>
-          <button
-            type="button"
-            disabled
-            aria-disabled="true"
-            className="cursor-not-allowed font-medium"
-          >
+          <Button variant="onlyText" disabled>
             {t("privacy")}
-          </button>
+          </Button>
           <span className="font-medium">|</span>
-          <button
-            type="button"
-            disabled
-            aria-disabled="true"
-            className="cursor-not-allowed font-medium"
-          >
+          <Button variant="onlyText" disabled>
             {t("contact")}
-          </button>
+          </Button>
         </nav>
         <div className="inline-flex items-center gap-1.5 font-medium">
           <span>💛</span>

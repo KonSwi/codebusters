@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Button } from "@/shared/components/Button";
 
 export const HeroImage = () => {
   const t = useTranslations("landing.hero");
@@ -9,8 +10,7 @@ export const HeroImage = () => {
   return (
     <section
       data-testid="hero-image"
-      className="relative w-full overflow-hidden h-120"
-    >
+      className="relative w-full overflow-hidden h-120">
       <div className="absolute inset-0 bg-gray/90" />
       <div className="container relative z-10 flex flex-col items-center gap-3 py-21.25">
         <h1 className="text-titleBigFont font-extrabold leading-15 tracking-[-0.01rem]">
@@ -31,20 +31,12 @@ export const HeroImage = () => {
           {t("subtitle")}
         </p>
         <div className="flex flex-wrap items-center gap-8">
-          <button
-            type="button"
-            disabled
-            className="w-50 inline-flex items-center justify-center rounded-lg bg-red px-5 py-3 font-semibold cursor-not-allowed"
-          >
+          <Button variant="red" disabled>
             {t("ctaStart")}
-          </button>
-          <button
-            type="button"
-            disabled
-            className="w-50 inline-flex items-center justify-center rounded-lg border border-white px-5 py-3 font-semibold cursor-not-allowed"
-          >
+          </Button>
+          <Button variant="transparent" disabled>
             {t("ctaAcademy")}
-          </button>
+          </Button>
         </div>
       </div>
       <div className="absolute inset-0 -z-10">

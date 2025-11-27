@@ -1,16 +1,18 @@
 "use client";
 
-import React from "react";
 import { useTranslations } from "next-intl";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import clsx from "clsx";
 
-type Props = {
+type ContentProps = {
   variant?: "videoRight" | "videoLeft";
   videoId: string;
 };
 
-export const Content = ({ variant = "videoRight", videoId }: Props) => {
+export const Content: React.FC<ContentProps> = ({
+  variant = "videoRight",
+  videoId,
+}) => {
   const t = useTranslations("landing.content");
   const videoLeft = variant === "videoLeft";
 
@@ -26,10 +28,10 @@ export const Content = ({ variant = "videoRight", videoId }: Props) => {
           <h2 className="text-titleBigFont font-extrabold text-dark leading-15 tracking-[-0.01rem]">
             {t("what.title")}
           </h2>
-          <p className="text-articleSmallFont text-gray ">
+          <p className="text-articleSmallFont text-gray">
             {t("what.bodyFirst")}
           </p>
-          <p className="text-articleSmallFont text-gray ">
+          <p className="text-articleSmallFont text-gray">
             {t("what.bodySecond")}
           </p>
         </div>

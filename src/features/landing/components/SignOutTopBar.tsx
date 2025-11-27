@@ -1,15 +1,23 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import clsx from "clsx";
 import { useTranslations, useLocale } from "next-intl";
-import logo from "../../../../public/brand/logo.png";
+import { usePathname } from "next/navigation";
+import { Button } from "@/shared/components/Button";
+import logo from "/public/brand/logo.png";
 
 export const SignOutTopBar = () => {
   const t = useTranslations("landing.topbar");
   const locale = useLocale();
+  const pathname = usePathname();
+
   const homeHref = `/${locale}/landing`;
+  const registerHref = `/${locale}/register`;
+  const loginrHref = `/${locale}/login`;
+  const isRegisterPage = pathname?.includes("/register");
+  const isLoginPage = pathname?.includes("/login");
 
   return (
     <header className="bg-gray">
@@ -19,36 +27,37 @@ export const SignOutTopBar = () => {
           aria-label={t("brand")}
           className="inline-flex items-center"
         >
-          <Image
-            src={logo}
-            alt={t("brand")}
-            priority
-            className="h-11 w-auto"
-          />
+          <Image src={logo} alt={t("brand")} priority className="h-11 w-auto" />
         </Link>
         <nav className="flex items-center gap-10">
-          <button
-            type="button"
-            disabled
-            className="cursor-not-allowed font-medium"
-          >
+          <Button variant="onlyText" disabled>
             {t("brand")}
-          </button>
+          </Button>
           <span className="font-medium">|</span>
-          <button
-            type="button"
-            disabled
-            className="cursor-not-allowed font-medium"
+          <Link
+            href={loginrHref}
+            className={clsx(
+              "w-37.5 font-medium rounded-lg py-2 px-3 gap-2 text-center",
+              {
+                "text-orange": isLoginPage,
+                "text-white": !isLoginPage,
+              }
+            )}
           >
             {t("login")}
-          </button>
-          <button
-            type="button"
-            disabled
-            className="w-37.5 cursor-not-allowed font-medium bg-blue rounded-lg py-2 px-3 gap-2"
+          </Link>
+          <Link
+            href={registerHref}
+            className={clsx(
+              "w-37.5 font-medium rounded-lg py-2 px-3 gap-2 text-center text-white",
+              {
+                "bg-orange": isRegisterPage,
+                "bg-blue": !isRegisterPage,
+              }
+            )}
           >
             {t("register")}
-          </button>
+          </Link>
         </nav>
       </div>
     </header>

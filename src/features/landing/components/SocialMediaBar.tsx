@@ -1,10 +1,8 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SOCIAL_LINKS } from "../constants/socialLinks";
 
 export const SocialMediaBar = () => {
-  
   return (
     <div className="bg-dark">
       <div className="container flex justify-end gap-8 pr-10 py-2.5">

@@ -31,5 +31,25 @@
       "contact": "Contact",
       "copyright": "Devstock © 2025"
     }
+  },
+  "register": {
+    "title": "Sign up",
+    "nickname": "Nickname",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Your email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "acceptTerms": "I accept the",
+    "termsLink": "terms and conditions",
+    "submit": "Register",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginLink": "Log in",
+    "modal": {
+      "title": "Confirm your registration!",
+      "body": "We have sent an activation link to the address {email}, please verify it :)",
+      "failure": "Didn't receive the activation email?",
+      "resend": "Resend"
+    }
   }
 }

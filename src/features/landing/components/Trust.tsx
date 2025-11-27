@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
 import { useTranslations } from "next-intl";
+import { Button } from "@/shared/components/Button";
 
 export const Trust = () => {
   const t = useTranslations("landing.content");
@@ -15,14 +15,9 @@ export const Trust = () => {
         <p className="text-articleSmallFont text-grayLight font-extralight">
           {t("trust.body")}
         </p>
-        <button
-          type="button"
-          disabled
-          aria-disabled="true"
-          className="inline-flex font-medium cursor-not-allowed items-center justify-center text-blue"
-        >
+        <Button variant="linkText" className="p-0" disabled>
           {t("trust.ctaMeet")}
-        </button>
+        </Button>
       </div>
     </section>
   );
