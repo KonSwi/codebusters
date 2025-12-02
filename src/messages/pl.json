@@ -1,0 +1,66 @@
+{
+  "landing": {
+    "topbar": {
+      "brand": "Devstock.pl",
+      "login": "Zaloguj się",
+      "register": "Rejestracja"
+    },
+    "hero": {
+      "title": "Codebusters _/>",
+      "by": "by",
+      "brand": "Devstock",
+      "subtitle": "...to platforma do skutecznej, szybkiej i\u00A0angażującej nauki programowania poprzez praktykę i\u00A0grywalizację",
+      "ctaStart": "Zacznij naukę →",
+      "ctaAcademy": "Poznaj Akademię"
+    },
+    "content": {
+      "what": {
+        "title": "Czego możesz się nauczyć?",
+        "bodyFirst": "Codebusters pozwoli Ci poznawać i\u00A0w\u00A0praktyce ćwiczyć technologie Front-end, takie jak HTML5, CSS oraz JavaScript!",
+        "bodySecond": "Możesz rozwiązywać zadania, piąć się w\u00A0rankingu, zdobywać osiagnięcia i\u00A0poziomy znajomości różnych technologii, a\u00A0nawet wyeksportować swoje wyniki i\u00A0pochwalić się nimi!"
+      },
+      "trust": {
+        "title": "Zaufało nam już 400+ kursantów z całego kraju",
+        "body": "Rozwijamy produkty edukacyjne, prowadzimy akademię programowania, tworzymy software dla klientów komercyjnych, prowadzimy body leasing i\u00A0promujemy sport",
+        "ctaMeet": "Poznaj nas >"
+      }
+    },
+    "footer": {
+      "site": "Devstock.pl",
+      "privacy": "Polityka prywatności",
+      "contact": "Kontakt",
+      "copyright": "Devstock © 2025"
+    }
+  },
+  "register": {
+    "title": "Zarejestruj się",
+    "nickname": "Pseudonim",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Twój e-mail",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "acceptTerms": "Akceptuję",
+    "termsLink": "zasady i warunki",
+    "submit": "Zarejestruj się",
+    "alreadyHaveAccount": "Już masz konto?",
+    "loginLink": "Zaloguj się",
+    "modal": {
+      "title": "Potwierdź rejestrację!",
+      "body": "Przesłalismy link aktywacyjny na adres {email}, prosimy o weryfikację :)", 
+      "failure": "Mail aktywacyjny nie dotarł?",
+      "resend": "Prześlij ponownie"
+    }
+  },
+  "login": {
+    "title": "Zaloguj się",
+    "email": "Twój e-mail",
+    "password": "Hasło",
+    "rememberMe": "Zapamiętaj mnie",
+    "submit": "Zaloguj się", 
+    "forgotPassword": "Nie pamiętam hasła", 
+    "loginWithGithub": "Logowanie się przez Github",
+    "noAccount": "Nie masz jeszcze konta?",
+    "register": "Zarejestruj się"
+  }
+}
