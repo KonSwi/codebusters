@@ -2,7 +2,7 @@
   "landing": {
     "topbar": {
       "brand": "Devstock.pl",
-      "login": "Sign in",
+      "login": "Log in",
       "register": "Register"
     },
     "hero": {
@@ -51,5 +51,16 @@
       "failure": "Didn't receive the activation email?",
       "resend": "Resend"
     }
+  },
+  "login": {
+    "title": "Log in",
+    "email": "Your email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "submit": "Log in",
+    "forgotPassword": "Forgot password",
+    "loginWithGithub": "Log in with GitHub",
+    "noAccount": "Don't have an account yet?",
+    "register": "Register"
   }
 }

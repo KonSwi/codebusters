@@ -155,7 +155,6 @@ export const RegisterForm: React.FC = () => {
           type="submit"
           disabled={!isValid}
           variant="blue"
-          className="w-full py-2.5 px-5 mb-1 text-lg font-semibold"
         >
           {t("submit")}
         </Button>

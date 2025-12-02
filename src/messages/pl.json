@@ -51,5 +51,16 @@
       "failure": "Mail aktywacyjny nie dotarł?",
       "resend": "Prześlij ponownie"
     }
+  },
+  "login": {
+    "title": "Zaloguj się",
+    "email": "Twój e-mail",
+    "password": "Hasło",
+    "rememberMe": "Zapamiętaj mnie",
+    "submit": "Zaloguj się", 
+    "forgotPassword": "Nie pamiętam hasła", 
+    "loginWithGithub": "Logowanie się przez Github",
+    "noAccount": "Nie masz jeszcze konta?",
+    "register": "Zarejestruj się"
   }
 }
