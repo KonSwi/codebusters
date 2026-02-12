@@ -40,10 +40,10 @@
     "email": "Your email",
     "password": "Password",
     "confirmPassword": "Confirm password",
-    "acceptTerms": "I accept the",
+    "acceptTerms": "I accept the ",
     "termsLink": "terms and conditions",
     "submit": "Register",
-    "alreadyHaveAccount": "Already have an account?",
+    "alreadyHaveAccount": "Already have an account? ",
     "loginLink": "Log in",
     "modal": {
       "title": "Confirm your registration!",
@@ -60,7 +60,40 @@
     "submit": "Log in",
     "forgotPassword": "Forgot password",
     "loginWithGithub": "Log in with GitHub",
-    "noAccount": "Don't have an account yet?",
-    "register": "Register"
+    "noAccount": "Don't have an account yet? ",
+
+    "register": "Register",
+    "errors": {
+      "missingEmailOrPassword": "Enter your email and password.",
+      "userNotFound": "No user found with that email address.",
+      "invalidPassword": "Incorrect password.",
+      "default": "Login failed."
+    },
+    "notifications": {
+      "success": "Signed in successfully!"
+    }
+  },
+  "signedIn": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "ranking": "Ranking",
+      "lessons": "Lessons",
+      "calendar": "Calendar",
+      "settings": "Settings",
+      "adminPanel": "Admin panel"
+    },
+    "topbar": {
+      "brand": "Devstock.pl",
+      "logout": "Logout",
+      "profile": "User profile"
+    },
+    "pages": {
+      "dashboard": "Dashboard",
+      "ranking": "Ranking",
+      "lessons": "Lessons",
+      "calendar": "Calendar",
+      "settings": "Settings",
+      "adminPanel": "Admin panel"
+    }
   }
 }

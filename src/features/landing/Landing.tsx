@@ -1,25 +1,25 @@
-import { SocialMediaBar } from "./components/SocialMediaBar";
-import { SignOutTopBar } from "./components/SignOutTopBar";
-import { HeroImage } from "./components/HeroImage";
-import { Content } from "./components/Content";
-import { Trust } from "./components/Trust";
-import { Footer } from "./components/Footer";
+import { SocialMediaBar } from '@/components'
+import { SignOutTopBar } from '../signOutLayout/components/SignOutTopBar'
+import { HeroImage } from './components/HeroImage'
+import { Content } from './components/Content'
+import { Trust } from './components/Trust'
+import { Footer } from '@/features/signOutLayout/components/Footer'
 
 export const Landing = () => {
-  const VIDEO_ID = "fBGhBP476zE";
+  const VIDEO_ID = 'fBGhBP476zE'
 
   return (
     <>
-      <div className="min-h-dvh">
+      <div className='min-h-dvh'>
         <SocialMediaBar />
         <SignOutTopBar />
-        <main className="pb-15">
+        <main className='pb-15'>
           <HeroImage />
-          <Content variant="videoRight" videoId={VIDEO_ID} />
+          <Content variant='videoRight' videoId={VIDEO_ID} />
           <Trust />
         </main>
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}

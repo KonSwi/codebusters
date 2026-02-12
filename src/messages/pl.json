@@ -40,14 +40,14 @@
     "email": "Twój e-mail",
     "password": "Hasło",
     "confirmPassword": "Potwierdź hasło",
-    "acceptTerms": "Akceptuję",
+    "acceptTerms": "Akceptuję ",
     "termsLink": "zasady i warunki",
     "submit": "Zarejestruj się",
-    "alreadyHaveAccount": "Już masz konto?",
+    "alreadyHaveAccount": "Już masz konto? ",
     "loginLink": "Zaloguj się",
     "modal": {
       "title": "Potwierdź rejestrację!",
-      "body": "Przesłalismy link aktywacyjny na adres {email}, prosimy o weryfikację :)", 
+      "body": "Przesłalismy link aktywacyjny na adres {email}, prosimy o weryfikację :)",
       "failure": "Mail aktywacyjny nie dotarł?",
       "resend": "Prześlij ponownie"
     }
@@ -57,10 +57,42 @@
     "email": "Twój e-mail",
     "password": "Hasło",
     "rememberMe": "Zapamiętaj mnie",
-    "submit": "Zaloguj się", 
-    "forgotPassword": "Nie pamiętam hasła", 
+    "submit": "Zaloguj się",
+    "forgotPassword": "Nie pamiętam hasła",
     "loginWithGithub": "Logowanie się przez Github",
-    "noAccount": "Nie masz jeszcze konta?",
-    "register": "Zarejestruj się"
+    "noAccount": "Nie masz jeszcze konta? ",
+    "register": "Zarejestruj się",
+    "errors": {
+      "missingEmailOrPassword": "Podaj e-mail i hasło.",
+      "userNotFound": "Nie znaleziono użytkownika o takim adresie e-mail.",
+      "invalidPassword": "Nieprawidłowe hasło.",
+      "default": "Błąd logowania."
+    },
+    "notifications": {
+      "success": "Zalogowano pomyślnie!"
+    }
+  },
+  "signedIn": {
+    "sidebar": {
+      "dashboard": "Panel główny",
+      "ranking": "Ranking",
+      "lessons": "Lekcje",
+      "calendar": "Kalendarz",
+      "settings": "Ustawienia",
+      "adminPanel": "Panel admina"
+    },
+    "topbar": {
+      "brand": "Devstock.pl",
+      "logout": "Wyloguj się",
+      "profile": "Profil użytkownika"
+    },
+    "pages": {
+      "dashboard": "Panel główny",
+      "ranking": "Ranking",
+      "lessons": "Lekcje",
+      "calendar": "Kalendarz",
+      "settings": "Ustawienia",
+      "adminPanel": "Panel admina"
+    }
   }
 }

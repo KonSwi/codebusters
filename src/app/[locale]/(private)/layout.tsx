@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
+import SignInLayout from '@/features/signInLayout/layout'
 
 export default function PrivateLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  
-  return <>{children}</>;
+  return <SignInLayout>{children}</SignInLayout>
 }
