@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import { getLocale } from 'next-intl/server'
+
 import { AppContext } from '@/context'
+
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Codebusters App',

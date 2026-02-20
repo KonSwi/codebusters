@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { signOut } from 'next-auth/react'
+
 import { Button } from '@/components'
 
 export const SignInTopBar = () => {

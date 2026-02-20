@@ -1,16 +1,19 @@
 'use client'
 
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useTranslations, useLocale } from 'next-intl'
-import { signIn } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-import { useSnackbar } from 'notistack'
-import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getLoginSchema, LoginSchema } from '../schema'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import clsx from 'clsx'
+import { useForm } from 'react-hook-form'
+import { useTranslations, useLocale } from 'next-intl'
+import { useSnackbar } from 'notistack'
+
+import { zodResolver } from '@hookform/resolvers/zod'
+
 import { Button } from '@/components'
+
+import { getLoginSchema, LoginSchema } from '../schema'
 
 export const LoginForm = () => {
   const t = useTranslations('login')

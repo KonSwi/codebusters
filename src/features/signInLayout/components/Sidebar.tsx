@@ -3,10 +3,11 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import clsx from 'clsx'
+
 import { ExtendedViewButton } from './ExtendedViewButton'
 import { SidebarIconPicker, type SidebarIconName } from './SidebarIconPicker'
-import { useTranslations } from 'next-intl'
 
 type SidebarProps = {
   isCollapsed: boolean
@@ -19,6 +20,7 @@ type Item = {
     | 'ranking'
     | 'lessons'
     | 'calendar'
+    | 'task'
     | 'settings'
     | 'adminPanel'
   href: string
@@ -30,6 +32,7 @@ const ITEMS: Item[] = [
   { key: 'ranking', href: '/ranking', icon: 'ranking' },
   { key: 'lessons', href: '/lessons', icon: 'lessons' },
   { key: 'calendar', href: '/calendar', icon: 'calendar' },
+  { key: 'task', href: '/task', icon: 'task' },
   { key: 'settings', href: '/settings', icon: 'settings' },
   { key: 'adminPanel', href: '/admin-panel', icon: 'admin-panel' },
 ]
@@ -87,14 +90,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
               <SidebarIconPicker name={item.icon} className={iconClassName} />
               {!isCollapsed && <span className='text-sm'>{t(item.key)}</span>}
               {isCollapsed && (
-                <span
-                  className={clsx(
-                    'pointer-events-none absolute top-1/2 -translate-y-1/2 whitespace-nowrap rounded bg-white px-3 py-2 text-xs text-black opacity-0 transition-opacity group-hover:opacity-100',
-                    {
-                      'left-10': isCollapsed,
-                    }
-                  )}
-                >
+                <span className='pointer-events-none absolute left-10 top-1/2 -translate-y-1/2 whitespace-nowrap rounded bg-white px-3 py-2 text-xs text-black opacity-0 transition-opacity group-hover:opacity-100'>
                   <span
                     aria-hidden='true'
                     className='absolute left-0 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white'

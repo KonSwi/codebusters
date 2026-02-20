@@ -1,5 +1,7 @@
 import Link from 'next/link'
+
 import { SOCIAL_LINKS } from '@/features/landing/constants/socialLinks'
+
 import { SocialMediaIconPicker } from './SocialMediaIconPicker'
 
 export const SocialMediaBar = () => {

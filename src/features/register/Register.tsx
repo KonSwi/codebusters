@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+
 import { SocialMediaBar } from '@/components'
 import { SignOutTopBar } from '@/features/signOutLayout/components/SignOutTopBar'
 import { RegisterForm } from '@/features/register/components/RegisterForm'

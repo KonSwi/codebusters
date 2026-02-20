@@ -78,6 +78,7 @@
       "ranking": "Ranking",
       "lessons": "Lekcje",
       "calendar": "Kalendarz",
+      "task": "Zadanie",
       "settings": "Ustawienia",
       "adminPanel": "Panel admina"
     },
@@ -93,6 +94,83 @@
       "calendar": "Kalendarz",
       "settings": "Ustawienia",
       "adminPanel": "Panel admina"
+    },
+    "task": {
+      "topBar": {
+        "prev": "poprzednie zadanie",
+        "next": "następne zadanie",
+        "ariaFullscreen": "Przełącz tryb pełnoekranowy",
+        "ariaSettings": "Ustawienia zadania"
+      },
+      "panels": {
+        "description": "Opis zadania",
+        "tests": "Testy",
+        "quickTests": "Szybkie testy",
+        "results": "Wyniki testów",
+        "editor": "Edytor kodu",
+        "console": "Konsola"
+      },
+      "description": {
+        "category": "Kategoria",
+        "solved": "Wykonane",
+        "times": "razy",
+        "difficulty": "Stopień",
+        "sampleInput": "Przykładowe wejście",
+        "sampleOutput": "Przykładowe wyjście"
+      },
+      "timer": {
+        "tabs": {
+          "stopwatch": "Stoper",
+          "countdown": "Odliczanie"
+        },
+        "labels": {
+          "minutes": "Minuty"
+        },
+        "actions": {
+          "start": "Start",
+          "pause": "Pauza",
+          "reset": "Reset"
+        },
+        "aria": {
+          "button": "Timer"
+        }
+      },
+      "editor": {
+        "button": {
+          "runCode": "Uruchom kod",
+          "sendSolution": "Wyślij rozwiązanie"
+        },
+        "modal": {
+          "title": "{status, select, success {Gratulacje!} fail {Niestety!} other {Niestety!}}",
+          "description": "{status, select, success {Przesłane rozwiązanie jest poprawne!} fail {Przesłane rozwiązanie jest błędne!} other {Przesłane rozwiązanie jest błędne!}}",
+          "buttonLabel": "{status, select, success {Kontynuuj} fail {Wróć do zadania} other {Wróć do zadania}}"
+        }
+      },
+      "console": { "emptyCode": "Brak kodu do uruchomienia" },
+      "test": {
+        "testsWindow": {
+          "valueLabel": "Wartość",
+          "testCaseLabel": "Przypadek testowy {id}",
+          "runButtonLabel": "{mode, select, quick {Szybki test!} tests {Testuj!} other {Testuj!}}"
+        },
+        "resultsWindow": {
+          "quick": {
+            "title": "{status, select, passed {Twój kod przeszedł test} failed {Twój kod nie przeszedł testu} other {Twój kod nie przeszedł testu}}"
+          },
+          "full": {
+            "caseTitle": "{status, select, passed {Przypadek testowy {id} przeszedł!} failed {Przypadek testowy {id} nie przeszedł!} other {Przypadek testowy {id}}}",
+            "summaryTitle": "{status, select, passed {Twój kod przeszedł wszystkie testy} failed {Twój kod nie przeszedł wszystkich testów} other {Twój kod nie przeszedł wszystkich testów}}"
+          },
+          "expectedResultLabel": "Oczekiwany rezultat",
+          "yourResultLabel": "Twój rezultat",
+          "inputDataLabel": "Wprowadzona wartość"
+        }
+      },
+      "placeholders": {
+        "descriptionTitle": "Tytuł zadania",
+        "descriptionBody": "Tutaj pojawi się treść zadania. Na razie jest to przykładowy tekst demonstracyjny.",
+        "testsBody": "Tutaj w przyszłości pojawi się lista pełnych testów zadania."
+      }
     }
   }
 }

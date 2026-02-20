@@ -1,7 +1,20 @@
 import * as React from 'react'
-import Svg from '@/assets/icons/github.svg'
+import Image from 'next/image'
+import clsx from 'clsx'
 
-type Props = React.ComponentProps<typeof Svg> & { size?: number }
-export function GitHubIcon({ size = 18, ...props }: Props) {
-  return <Svg width={size} height={size} {...props} />
+type Props = {
+  size?: number
+  className?: string
+}
+
+export const GitHubIcon: React.FC<Props> = ({ size = 18, className }) => {
+  return (
+    <Image
+      src='/icons/github.svg'
+      width={size}
+      height={size}
+      alt='GitHub'
+      className={clsx(className)}
+    />
+  )
 }

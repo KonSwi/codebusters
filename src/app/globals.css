@@ -1,20 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import 'tailwindcss';
 
 @theme inline {
   --color-dark: #121415;
   --color-gray: #222426;
+  --color-grayLightTask: #444648;
   --color-white: #ffffff;
   --color-blue: #0074f0;
+  --color-blueOff: #1185f1;
   --color-red: #f74746;
   --color-grayBorder: #e5e7eb;
   --color-grayLight: #6b7280;
-  --color-grayBackground: #C4C4C4;
+  --color-grayBackground: #c4c4c4;
   --color-formGray: #374151;
   --color-formBorder: #4b5563;
   --color-formPlaceholder: #9ca3af;
   --color-orange: #f5a22e;
-  --font-sans: "Lexend Deca", Helvetica, sans-serif;
+  --color-green: #0e9f6e;
+  --color-lightGreen: #1faf7f;
+  --color-codeBorder: #333537;
+  --font-sans: 'Lexend Deca', Helvetica, sans-serif;
   --text-titleBigFont: 64px;
   --text-titleSmallFont: 32px;
   --text-articleBigFont: 24px;
@@ -24,7 +29,7 @@
 }
 
 body {
-  @apply bg-white text-white font-sans;
+  @apply bg-white font-sans text-white;
 }
 
 .container {
@@ -33,4 +38,57 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-weight: 200;
+}
+
+.task-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.85) transparent;
+}
+
+.task-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.code-editor-scroll .monaco-editor .scrollbar.vertical {
+  width: 8px;
+}
+
+.code-editor-scroll .monaco-editor .scrollbar.horizontal {
+  height: 8px;
+}
+
+.code-editor-scroll .monaco-editor .scrollbar {
+  background: transparent;
+}
+
+.code-editor-scroll .monaco-editor .scrollbar > .slider {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.code-editor-scroll .monaco-editor .scrollbar > .slider:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.code-editor-scroll .monaco-editor .scrollbar > .slider.active {
+  background-color: rgba(255, 255, 255, 0.85);
 }

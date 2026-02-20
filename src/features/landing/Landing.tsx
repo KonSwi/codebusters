@@ -1,9 +1,11 @@
 import { SocialMediaBar } from '@/components'
+import { Footer } from '@/features/signOutLayout/components/Footer'
+
 import { SignOutTopBar } from '../signOutLayout/components/SignOutTopBar'
 import { HeroImage } from './components/HeroImage'
 import { Content } from './components/Content'
 import { Trust } from './components/Trust'
-import { Footer } from '@/features/signOutLayout/components/Footer'
+
 
 export const Landing = () => {
   const VIDEO_ID = 'fBGhBP476zE'

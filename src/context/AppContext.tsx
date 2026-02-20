@@ -1,9 +1,11 @@
 'use client'
 
-import React, { Suspense } from 'react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import React from 'react'
 import { SnackbarProvider } from 'notistack'
 import { SessionProvider } from 'next-auth/react'
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
 import { ErrorBoundary } from './ErrorBoundary'
 
 type Props = {
@@ -23,13 +25,13 @@ export const AppContext: React.FC<Props> = ({ children }) => {
 
   return (
     <ErrorBoundary>
-      <Suspense fallback={<LoadingFallback />}>
+      <React.Suspense fallback={<LoadingFallback />}>
         <QueryClientProvider client={queryClient}>
           <SessionProvider>
             <SnackbarProvider maxSnack={3}>{children}</SnackbarProvider>
           </SessionProvider>
         </QueryClientProvider>
-      </Suspense>
+      </React.Suspense>
     </ErrorBoundary>
   )
 }

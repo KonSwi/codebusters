@@ -1,7 +1,20 @@
 import * as React from 'react'
-import Svg from '@/assets/icons/youtube.svg'
+import Image from 'next/image'
+import clsx from 'clsx'
 
-type Props = React.ComponentProps<typeof Svg> & { size?: number }
-export function YouTubeIcon({ size = 18, ...props }: Props) {
-  return <Svg width={size} height={size} {...props} />
+type Props = {
+  size?: number
+  className?: string
+}
+
+export const YouTubeIcon: React.FC<Props> = ({ size = 18, className }) => {
+  return (
+    <Image
+      src='/icons/youtube.svg'
+      width={size}
+      height={size}
+      alt='YouTube'
+      className={clsx(className)}
+    />
+  )
 }

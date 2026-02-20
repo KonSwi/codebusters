@@ -17,6 +17,7 @@ const PRIVATE_PATHS = [
   '/calendar',
   '/settings',
   '/admin-panel',
+  '/task',
 ]
 
 type Locale = 'pl' | 'en'

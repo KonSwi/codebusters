@@ -1,7 +1,7 @@
 'use client'
 
-import clsx from 'clsx'
 import React from 'react'
+import clsx from 'clsx'
 
 type Variant =
   | 'blue'
@@ -10,6 +10,12 @@ type Variant =
   | 'transparent'
   | 'onlyText'
   | 'linkText'
+  | 'ghost'
+  | 'icon'
+  | 'timer'
+  | 'orange'
+  | 'success'
+  | 'testResult'
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant
@@ -29,17 +35,41 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       aria-disabled={disabled}
       className={clsx(
-        'inline-flex items-center justify-center font-medium transition cursor-pointer',
+        'inline-flex cursor-pointer items-center justify-center font-medium transition focus-visible:outline-none',
         {
-          'bg-blue mb-1 w-full rounded-lg px-5 py-2.5 text-lg font-semibold text-white':
+          'bg-blue h-10 rounded-lg px-5 py-2.5 text-lg font-semibold text-white':
             variant === 'blue',
+
           'bg-red w-50 rounded-lg px-5 py-3 text-white': variant === 'red',
+
           'w-full gap-4 rounded-lg bg-black px-5 py-3 text-white':
             variant === 'black',
+
           'w-50 rounded-lg border border-white bg-transparent px-5 py-3 text-white':
             variant === 'transparent',
+
           'bg-transparent text-white': variant === 'onlyText',
+
           'text-blue bg-transparent': variant === 'linkText',
+
+          'hover:text-blue bg-transparent px-3 py-2 text-white':
+            variant === 'ghost',
+
+          'hover:bg-formGray rounded-md bg-transparent p-2 text-white':
+            variant === 'icon',
+
+          'bg-blue min-w-28.25 ml-4 flex h-10 gap-2 px-3 font-mono text-white':
+            variant === 'timer',
+
+          'bg-orange w-31.5 h-10 rounded-lg px-5 py-2 text-white':
+            variant === 'orange',
+
+          'bg-green w-75 h-10 rounded-lg px-5 py-2.5 font-medium text-white':
+            variant === 'success',
+
+          'bg-grayLightTask flex w-full items-center justify-between gap-3 rounded-lg border px-4 py-2 z-10':
+            variant === 'testResult',
+
           'cursor-not-allowed opacity-50': disabled,
         },
         className

@@ -5,12 +5,14 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { useTranslations, useLocale } from 'next-intl'
 import { useForm } from 'react-hook-form'
+import { enqueueSnackbar } from 'notistack'
+
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
-import { enqueueSnackbar } from 'notistack'
+
+import { Modal, Button } from '@/components'
+
 import { getRegisterSchema, type RegisterSchema } from '../schema'
-import { RegisterModal } from './RegisterModal'
-import { Button } from '@/components'
 
 type RegisterPayload = {
   name: string
@@ -215,10 +217,21 @@ export const RegisterForm: React.FC = () => {
           </p>
         </div>
       </form>
-
-      {showModal && (
-        <RegisterModal email={email} onClose={() => setShowModal(false)} />
-      )}
+      <Modal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        variant='neutral'
+        title={t('modal.title')}
+        description={
+          <div className='flex flex-col gap-4'>
+            <p>{t('modal.body', { email })}</p>
+            <p>{t('modal.failure')}</p>
+          </div>
+        }
+        buttonLabel={t('modal.resend')}
+        buttonVariant='blue'
+        buttonDisabled
+      />
     </>
   )
 }

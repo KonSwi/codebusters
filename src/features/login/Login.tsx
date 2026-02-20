@@ -1,10 +1,12 @@
 'use client'
 
 import Image from 'next/image'
-import { LoginForm } from './components/LoginForm'
+
 import { SocialMediaBar } from '@/components'
 import { SignOutTopBar } from '@/features/signOutLayout/components/SignOutTopBar'
 import { Footer } from '@/features/signOutLayout/components/Footer'
+
+import { LoginForm } from './components/LoginForm'
 
 export const Login = () => {
   return (
