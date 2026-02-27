@@ -30,11 +30,11 @@ export const authOptions: NextAuthOptions = {
         }
 
         const user = await prisma.user.findUnique({ where: { email } })
-        if (!user?.hashedPassword) {
+        if (!user?.password) {
           throw new Error('userNotFound')
         }
 
-        const ok = await bcrypt.compare(password, user.hashedPassword)
+        const ok = await bcrypt.compare(password, user.password)
         if (!ok) {
           throw new Error('invalidPassword')
         }
@@ -47,4 +47,14 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+
+  callbacks: {
+    async session({ session, token }) {
+      if (session.user && token?.sub) {
+        ;(session.user as { id: string }).id = token.sub
+      }
+
+      return session
+    },
+  },
 }

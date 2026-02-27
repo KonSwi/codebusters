@@ -115,6 +115,7 @@
         "solved": "Wykonane",
         "times": "razy",
         "difficulty": "Stopień",
+        "difficultyLabel": "{difficulty, select, EASY {Łatwy} MEDIUM {Średni} HARD {Trudny} other {Łatwy}}",
         "sampleInput": "Przykładowe wejście",
         "sampleOutput": "Przykładowe wyjście"
       },
@@ -151,7 +152,11 @@
         "testsWindow": {
           "valueLabel": "Wartość",
           "testCaseLabel": "Przypadek testowy {id}",
-          "runButtonLabel": "{mode, select, quick {Szybki test!} tests {Testuj!} other {Testuj!}}"
+          "runButtonLabel": "{mode, select, quick {Szybki test!} tests {Testuj!} other {Testuj!}}",
+          "emptyCodeError": "Kod nie może być pusty. Wprowadź funkcję do przetestowania.",
+          "mustBeFunctionError": "Wysyłany kod musi być funkcją (np. function solution(input) { ... }).",
+          "genericError": "Nie udało się uruchomić testów.",
+          "errorPrefix": "Błąd: {error}"
         },
         "resultsWindow": {
           "quick": {
@@ -170,6 +175,27 @@
         "descriptionTitle": "Tytuł zadania",
         "descriptionBody": "Tutaj pojawi się treść zadania. Na razie jest to przykładowy tekst demonstracyjny.",
         "testsBody": "Tutaj w przyszłości pojawi się lista pełnych testów zadania."
+      },
+      "list": {
+        "loading": "Ładowanie zadań...",
+        "error": "Nie udało się pobrać zadań.",
+        "header": {
+          "number": "No.",
+          "title": "Tytuł",
+          "category": "Kategoria",
+          "difficulty": "Stopień trudności"
+        },
+        "loadMore": "Więcej zadań",
+        "goToTask": "Przejdź do zadania",
+        "difficulty": {
+          "easy": "Łatwy",
+          "medium": "Średni",
+          "hard": "Trudny"
+        },
+        "category": {
+          "function": "JavaScript – funkcje",
+          "loop": "JavaScript – pętle"
+        }
       }
     }
   }

@@ -115,6 +115,7 @@
         "solved": "Solved",
         "times": "times",
         "difficulty": "Difficulty",
+        "difficultyLabel": "{difficulty, select, EASY {Easy} MEDIUM {Medium} HARD {Hard} other {Easy}}",
         "sampleInput": "Sample Input",
         "sampleOutput": "Sample Output"
       },
@@ -151,14 +152,18 @@
         "testsWindow": {
           "valueLabel": "Value",
           "testCaseLabel": "Test case {id}",
-          "runButtonLabel": "{mode, select, quick {Quick test!} tests {Run tests!} other {Run tests!}}"
+          "runButtonLabel": "{mode, select, quick {Quick test!} tests {Run tests!} other {Run tests!}}",
+          "emptyCodeError": "Code cannot be empty. Please provide a function to test.",
+          "mustBeFunctionError": "Submitted code must be a function (e.g. function solution(input) { ... }).",
+          "genericError": "Failed to run tests.",
+          "errorPrefix": "Error: {error}"
         },
         "resultsWindow": {
           "quick": {
             "title": "{status, select, passed {Your code passed the test} failed {Your code failed the test} other {Your code failed the test}}"
           },
           "full": {
-            "caseTitle": "{status, select, passed {Test case {id} passed!} failed {Test case {id} failed!} other {Test case {id}}}",
+            "caseTitle": "{status, select, passed {Test case {id} passed!} failed {Test case {id} failed} other {Test case {id}}}",
             "summaryTitle": "{status, select, passed {Your code passed all tests} failed {Your code did not pass all tests} other {Your code did not pass all tests}}"
           },
           "expectedResultLabel": "Expected result",
@@ -169,7 +174,28 @@
       "placeholders": {
         "descriptionTitle": "Task title",
         "descriptionBody": "The task content will appear here. For now, this is sample placeholder text.",
-        "testsBody": "A list of full tests for the task will be shown here in the future."
+        "testsBody": "Tests body"
+      },
+      "list": {
+        "loading": "Loading tasks...",
+        "error": "Failed to fetch tasks.",
+        "header": {
+          "number": "No.",
+          "title": "Title",
+          "category": "Category",
+          "difficulty": "Difficulty"
+        },
+        "loadMore": "More tasks",
+        "goToTask": "Go to task",
+        "difficulty": {
+          "easy": "Easy",
+          "medium": "Medium",
+          "hard": "Hard"
+        },
+        "category": {
+          "function": "JavaScript – functions",
+          "loop": "JavaScript – loops"
+        }
       }
     }
   }

@@ -14,6 +14,7 @@ type TestsContentProps = {
   activeTab: 'tests' | 'quick'
   quickInput: string
   onQuickInputChange: (value: string) => void
+  tests?: unknown[]
 }
 
 const THEME_NAME = 'codebusters-dark'
@@ -22,12 +23,14 @@ export const TestsContent: React.FC<TestsContentProps> = ({
   activeTab,
   quickInput,
   onQuickInputChange,
+  tests = [],
 }) => {
   const t = useTranslations('signedIn.task.test')
 
   const beforeMount: BeforeMount = (monaco) => {
     defineTheme(monaco)
   }
+
   if (activeTab === 'quick') {
     return (
       <div className='flex flex-col'>
@@ -68,16 +71,27 @@ export const TestsContent: React.FC<TestsContentProps> = ({
     )
   }
 
+  const source =
+    tests.length > 0 ? tests.slice(0, 3) : mockFullTestCases.slice(0, 3)
+
   return (
     <div className='flex flex-col gap-6'>
-      {mockFullTestCases.slice(0, 3).map((tc) => (
-        <div key={tc.id} className='flex flex-col'>
-          <p className='text-formErrorFont'>
-            {t('testsWindow.testCaseLabel', { id: tc.id })}
-          </p>
-          <CodeBlock value={tc.inputData} />
-        </div>
-      ))}
+      {source.map((testCase, index) => {
+        const id = index + 1
+        const value =
+          typeof testCase === 'string'
+            ? testCase
+            : JSON.stringify(testCase, null, 2)
+
+        return (
+          <div key={id} className='flex flex-col'>
+            <p className='text-formErrorFont'>
+              {t('testsWindow.testCaseLabel', { id })}
+            </p>
+            <CodeBlock value={value} />
+          </div>
+        )
+      })}
     </div>
   )
 }

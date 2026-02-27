@@ -32,9 +32,15 @@ const runInVm = (code: string, sandboxConsole: Record<string, unknown>) => {
   return script.runInContext(context, { timeout: 800 })
 }
 
+const isMeaningfulResult = (value: unknown) => {
+  if (value === undefined || value === null) return false
+  if (typeof value === 'string' && value.trim() === 'use strict') return false
+  return true
+}
+
 export async function POST(req: Request) {
   try {
-    const body = (await req.json()) as { code?: string }
+    const body: { code?: string } = await req.json()
     const code = body.code ?? ''
     const trimmed = code.trim()
 
@@ -44,7 +50,7 @@ export async function POST(req: Request) {
       lines.push({ id: makeId(), type, message })
     }
 
-    const sandboxConsole = {
+    const sandboxConsole: Record<string, unknown> = {
       log: (...args: unknown[]) => pushLine('info', args.map(toText).join(' ')),
       info: (...args: unknown[]) =>
         pushLine('info', args.map(toText).join(' ')),
@@ -87,7 +93,7 @@ export async function POST(req: Request) {
       returned = runInVm(`"use strict";\n${code}`, sandboxConsole)
     }
 
-    if (returned !== undefined) {
+    if (isMeaningfulResult(returned)) {
       pushLine('success', `Result: ${toText(returned)}`)
     }
 

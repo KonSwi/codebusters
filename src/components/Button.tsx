@@ -37,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={clsx(
         'inline-flex cursor-pointer items-center justify-center font-medium transition focus-visible:outline-none',
         {
-          'bg-blue h-10 rounded-lg px-5 py-2.5 text-lg font-semibold text-white':
+          'bg-blue h-10 rounded-lg px-5 py-2.5 font-semibold text-white':
             variant === 'blue',
 
           'bg-red w-50 rounded-lg px-5 py-3 text-white': variant === 'red',
@@ -64,10 +64,10 @@ export const Button: React.FC<ButtonProps> = ({
           'bg-orange w-31.5 h-10 rounded-lg px-5 py-2 text-white':
             variant === 'orange',
 
-          'bg-green w-75 h-10 rounded-lg px-5 py-2.5 font-medium text-white':
+          'bg-green h-10 rounded-lg px-5 py-2.5 font-medium text-white':
             variant === 'success',
 
-          'bg-grayLightTask flex w-full items-center justify-between gap-3 rounded-lg border px-4 py-2 z-10':
+          'bg-grayLightTask z-10 flex w-full items-center justify-between gap-3 rounded-lg border px-4 py-2':
             variant === 'testResult',
 
           'cursor-not-allowed opacity-50': disabled,

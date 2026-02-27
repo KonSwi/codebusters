@@ -1,5 +1,5 @@
-import { Task } from '@/features/task'
+import { TasksList } from '@/features/task/components/tasksList/TasksList'
 
 export default function TaskPage() {
-  return <Task />
+  return <TasksList />
 }

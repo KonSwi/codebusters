@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-
 import MonacoEditor, {
   type Monaco,
   type BeforeMount,
@@ -11,9 +10,8 @@ import MonacoEditor, {
 type CodeEditorProps = {
   value: string
   onChange: (value: string) => void
+  onValidate?: (hasErrors: boolean) => void
 }
-
-type EditorLike = { updateOptions: (options: Record<string, unknown>) => void }
 
 const THEME_NAME = 'codebusters-dark'
 
@@ -30,7 +28,11 @@ const getGutterOptions = (digits: number) => {
   return { lineNumbersMinChars: 7 }
 }
 
-export const CodeEditor: React.FC<CodeEditorProps> = ({ value, onChange }) => {
+export const CodeEditor: React.FC<CodeEditorProps> = ({
+  value,
+  onChange,
+  onValidate,
+}) => {
   const editorRef = React.useRef<EditorInstance | null>(null)
 
   const beforeMount: BeforeMount = (monaco) => {
@@ -62,6 +64,10 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({ value, onChange }) => {
         onChange={(v) => onChange(v ?? '')}
         beforeMount={beforeMount}
         onMount={onMount}
+        onValidate={(markers) => {
+          const hasErrors = markers.length > 0
+          onValidate?.(hasErrors)
+        }}
         options={{
           minimap: { enabled: false },
           fontSize: 10,

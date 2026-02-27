@@ -8,15 +8,58 @@ datasource db {
 }
 
 model User {
-  id             String    @id @default(cuid())
-  name           String?
-  email          String?   @unique
-  emailVerified  DateTime?
-  image          String?
-  hashedPassword String?
+  id            String                         @id @default(cuid()) @map("_id")
+  nick          String?
+  name          String?
+  lastName      String?
+  password      String?
+  email         String?                        @unique
+  image         String?
+  emailVerified DateTime?
+  acceptTerms   Boolean?
+  eneabled      Boolean?
+  accounts      Account[]
+  sessions      Session[]
+  solutions     JavascriptAssignmentSolution[]
 
-  accounts Account[]
-  sessions Session[]
+  @@map("users")
+}
+
+model JavascriptAssignment {
+  id               String                         @id @default(cuid())
+  name             String
+  category         Category                       @default(FUNCTION)
+  difficultyLevel  DifficultyLevel                @default(EASY)
+  submissions      Int?                           @default(0)
+  descriptionStart String
+  descriptionEnd   String?
+  sampleInput      String[]
+  sampleOutput     String[]
+  tests            Json[]
+  patternFunction  String
+  solutions        JavascriptAssignmentSolution[]
+}
+
+model JavascriptAssignmentSolution {
+  id                     String               @id @default(cuid())
+  javascriptAssignment   JavascriptAssignment @relation(fields: [javascriptAssignmentId], references: [id])
+  javascriptAssignmentId String
+  solution               Json[]               @default([])
+  user                   User                 @relation(fields: [userId], references: [id])
+  userId                 String
+
+  @@unique([javascriptAssignmentId, userId])
+}
+
+enum Category {
+  FUNCTION
+  LOOP
+}
+
+enum DifficultyLevel {
+  EASY
+  MEDIUM
+  HARD
 }
 
 model Account {

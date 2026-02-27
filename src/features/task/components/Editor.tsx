@@ -2,6 +2,10 @@
 
 import CodeEditorWrapper from './CodeEditorWrapper'
 
-export const Editor = () => {
-  return <CodeEditorWrapper />
+type EditorProps = {
+  taskId: string
+}
+
+export const Editor: React.FC<EditorProps> = ({ taskId }) => {
+  return <CodeEditorWrapper taskId={taskId} />
 }
