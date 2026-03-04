@@ -79,6 +79,7 @@
       "lessons": "Lekcje",
       "calendar": "Kalendarz",
       "task": "Zadanie",
+      "cssTask": "Zadanie CSS",
       "settings": "Ustawienia",
       "adminPanel": "Panel admina"
     },
@@ -147,7 +148,9 @@
           "buttonLabel": "{status, select, success {Kontynuuj} fail {Wróć do zadania} other {Wróć do zadania}}"
         }
       },
-      "console": { "emptyCode": "Brak kodu do uruchomienia" },
+      "console": {
+        "emptyCode": "Brak kodu do uruchomienia"
+      },
       "test": {
         "testsWindow": {
           "valueLabel": "Wartość",
@@ -195,6 +198,58 @@
         "category": {
           "function": "JavaScript – funkcje",
           "loop": "JavaScript – pętle"
+        }
+      }
+    },
+    "cssTask": {
+      "panels": {
+        "description": "Opis zadania",
+        "editor": "Edytor kodu",
+        "back": "Wróć",
+        "output": "Wynik kodu",
+        "target": "Wzór"
+      },
+      "toolbar": {
+        "downloadAria": "Pobierz zadanie",
+        "helpAria": "Pomoc"
+      },
+      "meta": {
+        "completedStatic": "Wykonane: 0 razy"
+      },
+      "editor": {
+        "loading": "Ładowanie kodu zadania CSS...",
+        "error": "Nie udało się załadować zadania CSS."
+      },
+      "list": {
+        "loading": "Ładowanie zadań CSS...",
+        "error": "Nie udało się załadować listy zadań CSS.",
+        "header": {
+          "number": "No.",
+          "title": "Nazwa zadania",
+          "category": "Kategoria",
+          "difficulty": "Poziom trudności"
+        },
+        "empty": "Brak zadań CSS do wyświetlenia.",
+        "loadMore": "Załaduj więcej"
+      },
+      "copied": "Skopiowano",
+      "placeholders": {
+        "descriptionTitle": "Tytuł zadania",
+        "descriptionBody": "Tutaj pojawi się treść zadania CSS. Na razie jest to przykładowy tekst demonstracyjny.",
+        "editorBody": "Edytor CSS będzie dostępny w kolejnych etapach zadania."
+      },
+      "output": {
+        "hideSlider": "Ukryj slider",
+        "showGrid": "Pokaż siatkę",
+        "noData": "Brak danych do wyświetlenia.",
+        "score": "Zgodność: {value}%",
+        "requiredScore": "Wymagana: {value}%",
+        "checkButton": "Sprawdź zgodność",
+        "submitButton": "Wyślij rozwiązanie",
+        "result": {
+          "title": "Twój wynik",
+          "percent": "Zdobyto {value}%",
+          "button": "Zamknij"
         }
       }
     }

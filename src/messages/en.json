@@ -79,6 +79,7 @@
       "lessons": "Lessons",
       "calendar": "Calendar",
       "task": "Task",
+      "cssTask": "CSS Task",
       "settings": "Settings",
       "adminPanel": "Admin panel"
     },
@@ -147,7 +148,9 @@
           "buttonLabel": "{status, select, success {Continue} fail {Back to task} other {Back to task}}"
         }
       },
-      "console": { "emptyCode": "No code to run" },
+      "console": {
+        "emptyCode": "No code to run"
+      },
       "test": {
         "testsWindow": {
           "valueLabel": "Value",
@@ -195,6 +198,58 @@
         "category": {
           "function": "JavaScript – functions",
           "loop": "JavaScript – loops"
+        }
+      }
+    },
+    "cssTask": {
+      "panels": {
+        "description": "Task description",
+        "editor": "Code editor",
+        "back": "Back",
+        "output": "Code result",
+        "target": "Target"
+      },
+      "toolbar": {
+        "downloadAria": "Download task",
+        "helpAria": "Help"
+      },
+      "meta": {
+        "completedStatic": "Completed: 0 times"
+      },
+      "editor": {
+        "loading": "Loading CSS task code...",
+        "error": "Failed to load CSS task."
+      },
+      "list": {
+        "loading": "Loading CSS tasks...",
+        "error": "Failed to load CSS tasks list.",
+        "header": {
+          "number": "No.",
+          "title": "Task name",
+          "category": "Category",
+          "difficulty": "Difficulty level"
+        },
+        "empty": "No CSS tasks to display.",
+        "loadMore": "Load more"
+      },
+      "copied": "Copied",
+      "placeholders": {
+        "descriptionTitle": "Task title",
+        "descriptionBody": "The CSS task description will appear here. For now, this is sample placeholder text.",
+        "editorBody": "The CSS editor will be available in the next stages of the task."
+      },
+      "output": {
+        "hideSlider": "Hide slider",
+        "showGrid": "Show grid",
+        "noData": "No data to display.",
+        "score": "Match: {value}%",
+        "requiredScore": "Required: {value}%",
+        "checkButton": "Check match",
+        "submitButton": "Submit solution",
+        "result": {
+          "title": "Your result",
+          "percent": "Scored {value}%",
+          "button": "Close"
         }
       }
     }

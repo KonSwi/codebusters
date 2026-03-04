@@ -10,7 +10,7 @@ export type ModalVariant = 'success' | 'error' | 'neutral'
 type Props = {
   isOpen: boolean
   onClose: () => void
-  title: string
+  title: React.ReactNode
   description?: React.ReactNode
   buttonLabel: string
   variant?: ModalVariant

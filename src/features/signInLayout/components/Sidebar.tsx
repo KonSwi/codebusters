@@ -21,6 +21,7 @@ type Item = {
     | 'lessons'
     | 'calendar'
     | 'task'
+    | 'cssTask'
     | 'settings'
     | 'adminPanel'
   href: string
@@ -33,6 +34,7 @@ const ITEMS: Item[] = [
   { key: 'lessons', href: '/lessons', icon: 'lessons' },
   { key: 'calendar', href: '/calendar', icon: 'calendar' },
   { key: 'task', href: '/task', icon: 'task' },
+  { key: 'cssTask', href: '/css-task', icon: 'css-task' },
   { key: 'settings', href: '/settings', icon: 'settings' },
   { key: 'adminPanel', href: '/admin-panel', icon: 'admin-panel' },
 ]

@@ -1,4 +1,4 @@
-import { TasksList } from '@/features/task/components/tasksList/TasksList'
+import { TasksList } from '@/features/jsTaskList/JSTaskList'
 
 export default function TaskPage() {
   return <TasksList />

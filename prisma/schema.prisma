@@ -20,6 +20,7 @@ model User {
   eneabled      Boolean?
   accounts      Account[]
   sessions      Session[]
+  cssSolutions  CssAssignmentSolution[]
   solutions     JavascriptAssignmentSolution[]
 
   @@map("users")
@@ -51,15 +52,29 @@ model JavascriptAssignmentSolution {
   @@unique([javascriptAssignmentId, userId])
 }
 
-enum Category {
-  FUNCTION
-  LOOP
+model CssAssignment {
+  id                String              @id @default(cuid()) @map("_id")
+  name              String
+  description       String
+  code              String
+  category          CssCategory
+  difficultyLevel   DifficultyLevel
+  requirements      Int
+  colors            String[]
+  solutions         CssAssignmentSolution[]
+  targetUrl         String
 }
 
-enum DifficultyLevel {
-  EASY
-  MEDIUM
-  HARD
+model CssAssignmentSolution {
+  id              String         @id @default(cuid()) @map("_id")
+  cssAssignment   CssAssignment  @relation(fields: [CssAssignmentId], references: [id])
+  CssAssignmentId String
+  solution        String
+  user            User           @relation(fields: [userId], references: [id])
+  userId          String
+  result          Int            @default(0)
+
+  @@unique([CssAssignmentId, userId])
 }
 
 model Account {
@@ -96,4 +111,19 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+enum Category {
+  FUNCTION
+  LOOP
+}
+
+enum DifficultyLevel {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum CssCategory {
+  SHAPES
 }

@@ -1,4 +1,4 @@
-import { Task } from '@/features/task'
+import { Task } from '@/features/jsTask'
 
 const TaskPage = () => {
   return <Task />
