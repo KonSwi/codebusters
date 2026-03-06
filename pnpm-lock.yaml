@@ -76,9 +76,15 @@ importers:
       react-page-visibility:
         specifier: ^7.0.0
         version: 7.0.0(react@19.2.0)
+      react-sortablejs:
+        specifier: ^6.1.4
+        version: 6.1.4(@types/sortablejs@1.15.9)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sortablejs@1.15.7)
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
+      sortablejs:
+        specifier: ^1.15.7
+        version: 1.15.7
       vite-plugin-require:
         specifier: ^1.2.14
         version: 1.2.14(@swc/core@1.15.11)(vite@4.5.14(@types/node@20.19.33)(lightningcss@1.30.2)(terser@5.46.0))
@@ -2788,6 +2794,9 @@ packages:
         integrity: sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w==,
       }
 
+  '@types/sortablejs@1.15.9':
+    resolution: {integrity: sha512-7HP+rZGE2p886PKV9c9OJzLBI6BBJu1O7lJGYnPyG3fS4/duUCcngkNCjsLwIMV+WMqANe3tt4irrXHSIe68OQ==}
+
   '@types/trusted-types@2.0.7':
     resolution:
       {
@@ -3812,6 +3821,9 @@ packages:
       {
         integrity: sha512-kEV95lFBhQgtogAPlQfJJ0WGVSokvLr/UEoFPiKKOXF7pl98HfUVUD0ejsuTCld/9xH9vogSywZ5KqHzXrZpqg==,
       }
+
+  classnames@2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
 
   classnames@2.5.1:
     resolution:
@@ -7171,6 +7183,14 @@ packages:
       }
     engines: { node: '>=0.10.0' }
 
+  react-sortablejs@6.1.4:
+    resolution: {integrity: sha512-fc7cBosfhnbh53Mbm6a45W+F735jwZ1UFIYSrIqcO/gRIFoDyZeMtgKlpV4DdyQfbCzdh5LoALLTDRxhMpTyXQ==}
+    peerDependencies:
+      '@types/sortablejs': '1'
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+      sortablejs: '1'
+
   react@19.2.0:
     resolution:
       {
@@ -7568,6 +7588,9 @@ packages:
       }
     engines: { node: '>= 10.0.0', npm: '>= 3.0.0' }
 
+  sortablejs@1.15.7:
+    resolution: {integrity: sha512-Kk8wLQPlS+yi1ZEf48a4+fzHa4yxjC30M/Sr2AnQu+f/MPwvvX9XjZ6OWejiz8crBsLwSq8GHqaxaET7u6ux0A==}
+
   source-map-js@1.2.1:
     resolution:
       {
@@ -7942,6 +7965,9 @@ packages:
         integrity: sha512-TIsDdtKo6+XrPtiTm1ssmMngN1sAhyKnTO2kunQWqNPWIVvCm15Wmw4SWInwTVgJ5u/Tr04+8Ei9TNcw4x4ONA==,
       }
     engines: { node: '>=4' }
+
+  tiny-invariant@1.2.0:
+    resolution: {integrity: sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==}
 
   tinybench@2.9.0:
     resolution:
@@ -10383,6 +10409,8 @@ snapshots:
     dependencies:
       csstype: 3.2.3
 
+  '@types/sortablejs@1.15.9': {}
+
   '@types/trusted-types@2.0.7':
     optional: true
 
@@ -11066,6 +11094,8 @@ snapshots:
       consola: 3.4.2
 
   citty@0.2.1: {}
+
+  classnames@2.3.1: {}
 
   classnames@2.5.1: {}
 
@@ -13174,6 +13204,15 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
+  react-sortablejs@6.1.4(@types/sortablejs@1.15.9)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sortablejs@1.15.7):
+    dependencies:
+      '@types/sortablejs': 1.15.9
+      classnames: 2.3.1
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+      sortablejs: 1.15.7
+      tiny-invariant: 1.2.0
+
   react@19.2.0: {}
 
   read-pkg-up@7.0.1:
@@ -13459,6 +13498,8 @@ snapshots:
       ip-address: 10.1.0
       smart-buffer: 4.2.0
 
+  sortablejs@1.15.7: {}
+
   source-map-js@1.2.1: {}
 
   source-map-support@0.5.21:
@@ -13703,6 +13744,8 @@ snapshots:
   through@2.3.8: {}
 
   time-zone@1.0.0: {}
+
+  tiny-invariant@1.2.0: {}
 
   tinybench@2.9.0: {}
 

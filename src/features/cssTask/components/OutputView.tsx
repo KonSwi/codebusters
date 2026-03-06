@@ -168,7 +168,7 @@ export const OutputView: React.FC<OutputViewProps> = ({
             />
           </div>
           <div className='flex w-full justify-between p-4'>
-            <span className='text-red text-formFont '>
+            <span className='text-red text-formFont'>
               {t('output.score', { value: displayedScore })}
             </span>
             <div className='mx-2 w-7 shrink-0 rotate-90 border-t-2' />

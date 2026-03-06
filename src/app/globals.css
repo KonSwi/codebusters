@@ -19,14 +19,17 @@
   --color-green: #0e9f6e;
   --color-lightGreen: #1faf7f;
   --color-codeBorder: #333537;
+  --color-aqua: #97E7E7;
   --font-sans: 'Lexend Deca', Helvetica, sans-serif;
   --text-titleBigFont: 64px;
   --text-titleSmallFont: 32px;
   --text-articleBigFont: 24px;
   --text-articleSmallFont: 20px;
+  --text-moduleTitleFont: 18px;
   --text-formFont: 14px;
   --text-formErrorFont: 12px;
 }
+
 
 body {
   @apply bg-white font-sans text-white;

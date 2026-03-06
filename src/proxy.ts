@@ -13,7 +13,7 @@ const PUBLIC_PATHS = ['/landing', '/login', '/register']
 const PRIVATE_PATHS = [
   '/dashboard',
   '/ranking',
-  '/lessons',
+  '/modules',
   '/calendar',
   '/settings',
   '/admin-panel',

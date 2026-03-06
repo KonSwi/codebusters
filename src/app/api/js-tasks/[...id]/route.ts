@@ -209,7 +209,9 @@ export const PUT = async (request: Request) => {
           },
         },
       })
+    }
 
+    if (variant === 'solution') {
       await prisma.javascriptAssignmentSolution.upsert({
         where: {
           javascriptAssignmentId_userId: {
@@ -218,12 +220,22 @@ export const PUT = async (request: Request) => {
           },
         },
         update: {
-          solution: [solution],
+          solution: [
+            {
+              code: solution,
+              allPassed,
+            },
+          ],
         },
         create: {
           javascriptAssignmentId: taskId,
           userId,
-          solution: [solution],
+          solution: [
+            {
+              code: solution,
+              allPassed,
+            },
+          ],
         },
       })
     }

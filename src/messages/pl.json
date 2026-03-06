@@ -76,7 +76,7 @@
     "sidebar": {
       "dashboard": "Panel główny",
       "ranking": "Ranking",
-      "lessons": "Lekcje",
+      "modules": "Moduły",
       "calendar": "Kalendarz",
       "task": "Zadanie",
       "cssTask": "Zadanie CSS",
@@ -91,7 +91,7 @@
     "pages": {
       "dashboard": "Panel główny",
       "ranking": "Ranking",
-      "lessons": "Lekcje",
+      "modules": "Moduły",
       "calendar": "Kalendarz",
       "settings": "Ustawienia",
       "adminPanel": "Panel admina"
@@ -180,7 +180,6 @@
         "testsBody": "Tutaj w przyszłości pojawi się lista pełnych testów zadania."
       },
       "list": {
-        "loading": "Ładowanie zadań...",
         "error": "Nie udało się pobrać zadań.",
         "header": {
           "number": "No.",
@@ -217,11 +216,9 @@
         "completedStatic": "Wykonane: 0 razy"
       },
       "editor": {
-        "loading": "Ładowanie kodu zadania CSS...",
         "error": "Nie udało się załadować zadania CSS."
       },
       "list": {
-        "loading": "Ładowanie zadań CSS...",
         "error": "Nie udało się załadować listy zadań CSS.",
         "header": {
           "number": "No.",
@@ -252,6 +249,89 @@
           "button": "Zamknij"
         }
       }
+    },
+    "modules": {
+      "title": "Akademia Devstock",
+      "description": "Poniżej znajdziesz szczegółowy przegląd naszego nowatorskiego kursu, zaprojektowanego z myślą o dostarczeniu Ci kompleksowej wiedzy i praktycznych umiejętności. Kurs podzielony jest na sześć modułów tematycznych, każdy z nich skupia się na kluczowych zagadnieniach i konkretnych aspektach danych języków, narzędzi i frameworów, aby zapewnić Ci głębokie zrozumienie technologii Front-endowych. Niezależnie od tego, czy jesteś początkujący w danej dziedzinie, czy szukasz uzupełnienia i poszerzenia swoich kompetencji, ten kurs został zaprojektowany tak, aby sprostać Twoim oczekiwaniom :) Dzięki za to że jesteś z nami!",
+      "inputLabel": "Input:",
+      "outputLabel": "Output:",
+      "sprintsLabel": "sprintów",
+      "enterModule": "Wejdź do modułu",
+      "progressLabel": "Postęp modułu TEST TEST TEST:",
+      "breadcrumbsLabel": "Moduły",
+      "errors": {
+        "loading": "Wystąpił błąd podczas ładowania modułów."
+      }
+    },
+    "module": {
+      "difficulty": {
+        "easy": "Łatwy",
+        "medium": "Średni",
+        "hard": "Trudny"
+      },
+      "sprintsLabel": "sprintów",
+      "tasksLabel": "zadań",
+      "tabs": {
+        "description": "Opis modułu",
+        "sprints": "Lista sprintów"
+      },
+      "sprints": {
+        "learnLabel": "Czego się nauczysz:",
+        "openButtonLabel": "Przejdź do sprintu"
+      },
+      "descriptionTab": {
+        "inputLabel": "Input:",
+        "outputLabel": "Output:",
+        "startButton": "Rozpocznij moduł"
+      },
+      "breadcrumbs": {
+        "modules": "Moduły",
+        "module": "Moduł"
+      },
+      "errors": {
+        "loading": "Wystąpił błąd podczas ładowania modułu."
+      }
+    },
+    "kanban": {
+      "card": {
+        "statusPrefix": "Status:"
+      },
+      "fullCard": {
+        "statusPrefix": "Status:",
+        "testsButton": "Wynik testów / review",
+        "addAttachment": "Dodaj załącznik",
+        "goToTask": "Przechodzę do zadania!"
+      },
+      "difficulty": {
+        "easy": "Łatwy",
+        "normal": "Średni",
+        "hard": "Trudny"
+      },
+      "status": {
+        "todo": "do zrobienia",
+        "inProgress": "w trakcie",
+        "done": "zrobione"
+      },
+      "columns": {
+        "todo": "Do zrobienia",
+        "inProgress": "W trakcie",
+        "done": "Ukończone"
+      },
+      "type": {
+        "exercise": "Ćwiczenie"
+      }
+    },
+    "sprint": {
+      "breadcrumbs": {
+        "modules": "Moduły",
+        "module": "Moduł",
+        "sprint": "Sprint"
+      },
+      "errors": {
+        "loading": "Wystąpił błąd podczas ładowania sprintu."
+      },
+      "tasksLabel": "zadań",
+      "taskListButton": "Lista zadań"
     }
   }
 }

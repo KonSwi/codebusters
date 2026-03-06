@@ -27,8 +27,11 @@ export const Task = () => {
   const [results, setResults] = React.useState<AnyResults | null>(null)
 
   const t = useTranslations('signedIn.task')
+
   const params = useParams<{ id?: string }>()
+
   const rawId = params?.id
+
   const taskId = Array.isArray(rawId) ? rawId[0] : rawId
 
   const { data: assignment } = useTask(taskId)
@@ -57,8 +60,8 @@ export const Task = () => {
 
   return (
     <CodeEditorProvider>
-      <div className='flex h-full min-h-0 w-full flex-col gap-5 overflow-hidden pb-6 font-medium'>
-        <div className='bg-gray flex shrink-0 items-center justify-between rounded-lg px-4 '>
+      <div className='flex h-full min-h-0 w-full max-w-full flex-col gap-5 overflow-hidden pb-6 font-medium'>
+        <div className='bg-gray flex shrink-0 items-center justify-between rounded-lg px-4'>
           <div className='flex items-center'>
             <Button type='button' variant='ghost'>
               {t('topBar.prev')}
@@ -103,14 +106,17 @@ export const Task = () => {
           </div>
         </div>
         <div
-          className={clsx('flex min-h-0 flex-1 overflow-hidden', {
-            'gap-0': isFullscreen,
-            'gap-8': !isFullscreen,
-          })}
+          className={clsx(
+            'flex min-h-0 w-full min-w-0 max-w-full flex-1 overflow-hidden',
+            {
+              'gap-0': isFullscreen,
+              'gap-8': !isFullscreen,
+            }
+          )}
         >
           <div
             className={clsx(
-              'flex min-h-0 flex-col gap-4 overflow-hidden transition-all duration-300 ease-in-out',
+              'flex min-h-0 w-full min-w-0 max-w-full basis-0 flex-col gap-4 overflow-hidden',
               {
                 'pointer-events-none w-0 opacity-0': isFullscreen,
                 'flex-1 opacity-100': !isFullscreen,
@@ -157,7 +163,7 @@ export const Task = () => {
           </div>
           <div
             className={clsx(
-              'flex min-h-0 flex-col gap-4 overflow-hidden transition-all duration-300 ease-in-out',
+              'flex min-h-0 w-full min-w-0 max-w-full basis-0 flex-col gap-4 overflow-hidden',
               {
                 'flex-1': isFullscreen,
                 'flex-2': !isFullscreen,

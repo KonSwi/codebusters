@@ -29,16 +29,16 @@ export const FullTestCase: React.FC<FullTestCaseProps> = ({ testCase }) => {
           'border-red': !testCase.passed,
         })}
       >
-        <div className='flex-1 min-w-0'>
-        <span className='text-formErrorFont h-5.5'>
-          {t('resultsWindow.full.caseTitle', {
-            id: testCase.id,
-            status,
-          })}
-        </span>
+        <div className='min-w-0 flex-1'>
+          <span className='text-formErrorFont h-5.5'>
+            {t('resultsWindow.full.caseTitle', {
+              id: testCase.id,
+              status,
+            })}
+          </span>
         </div>
         <svg
-          className={clsx('h-5 w-5 transition-transform', {
+          className={clsx('h-5 w-5', {
             'rotate-180': open,
           })}
           viewBox='0 0 24 24'

@@ -76,7 +76,7 @@
     "sidebar": {
       "dashboard": "Dashboard",
       "ranking": "Ranking",
-      "lessons": "Lessons",
+      "modules": "Modules",
       "calendar": "Calendar",
       "task": "Task",
       "cssTask": "CSS Task",
@@ -91,7 +91,7 @@
     "pages": {
       "dashboard": "Dashboard",
       "ranking": "Ranking",
-      "lessons": "Lessons",
+      "modules": "Modules",
       "calendar": "Calendar",
       "settings": "Settings",
       "adminPanel": "Admin panel"
@@ -180,7 +180,6 @@
         "testsBody": "Tests body"
       },
       "list": {
-        "loading": "Loading tasks...",
         "error": "Failed to fetch tasks.",
         "header": {
           "number": "No.",
@@ -217,11 +216,9 @@
         "completedStatic": "Completed: 0 times"
       },
       "editor": {
-        "loading": "Loading CSS task code...",
         "error": "Failed to load CSS task."
       },
       "list": {
-        "loading": "Loading CSS tasks...",
         "error": "Failed to load CSS tasks list.",
         "header": {
           "number": "No.",
@@ -252,6 +249,89 @@
           "button": "Close"
         }
       }
+    },
+    "modules": {
+      "title": "Devstock Academy",
+      "description": "Below you'll find a detailed overview of our innovative course, designed to provide you with comprehensive knowledge and practical skills. The course is divided into six thematic modules, each focusing on key topics and specific aspects of various languages, tools, and frameworks to ensure a deep understanding of Front-end technologies. Whether you’re a beginner in the field or looking to enhance and expand your competencies, this course has been created to meet your expectations :) Thanks for being with us!",
+      "inputLabel": "Input:",
+      "outputLabel": "Output:",
+      "sprintsLabel": "sprints",
+      "enterModule": "Enter module",
+      "progressLabel": "Progress module TEST TEST TEST:",
+      "breadcrumbsLabel": "Modules",
+      "errors": {
+        "loading": "Failed to load modules."
+      }
+    },
+    "module": {
+      "difficulty": {
+        "easy": "Easy",
+        "medium": "Medium",
+        "hard": "Hard"
+      },
+      "sprintsLabel": "sprints",
+      "tasksLabel": "tasks",
+      "tabs": {
+        "description": "Module overview",
+        "sprints": "Sprints list"
+      },
+      "sprints": {
+        "learnLabel": "What you will learn:",
+        "openButtonLabel": "Go to sprint"
+      },
+      "descriptionTab": {
+        "inputLabel": "Input:",
+        "outputLabel": "Output:",
+        "startButton": "Start module"
+      },
+      "breadcrumbs": {
+        "modules": "Modules",
+        "module": "Module"
+      },
+      "errors": {
+        "loading": "Failed to load module."
+      }
+    },
+    "kanban": {
+      "card": {
+        "statusPrefix": "Status:"
+      },
+      "fullCard": {
+        "statusPrefix": "Status:",
+        "testsButton": "Tests result / review",
+        "addAttachment": "Add attachment",
+        "goToTask": "Go to task!"
+      },
+      "difficulty": {
+        "easy": "Easy",
+        "normal": "Medium",
+        "hard": "Hard"
+      },
+      "status": {
+        "todo": "to do",
+        "inProgress": "in progress",
+        "done": "done"
+      },
+      "columns": {
+        "todo": "To do",
+        "inProgress": "In progress",
+        "done": "Completed"
+      },
+      "type": {
+        "exercise": "Exercise"
+      }
+    },
+    "sprint": {
+      "breadcrumbs": {
+        "modules": "Modules",
+        "module": "Module",
+        "sprint": "Sprint"
+      },
+      "errors": {
+        "loading": "Failed to load sprint."
+      },
+      "tasksLabel": "tasks",
+      "taskListButton": "Task list"
     }
   }
 }

@@ -61,7 +61,9 @@
     "react-hook-form": "^7.66.1",
     "react-lite-youtube-embed": "^2.5.6",
     "react-page-visibility": "^7.0.0",
+    "react-sortablejs": "^6.1.4",
     "sharp": "^0.34.5",
+    "sortablejs": "^1.15.7",
     "vite-plugin-require": "^1.2.14",
     "vite-tsconfig-paths": "^4.3.2",
     "zod": "^4.1.13"

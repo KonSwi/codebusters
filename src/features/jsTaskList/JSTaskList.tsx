@@ -7,11 +7,13 @@ import { Button } from '@/components'
 import { AddIcon } from '@/icons'
 import { useTasksLogic } from '@/features/jsTaskList/useJSTasksLogic'
 import { TasksListElement } from '@/components/tasksList'
+import { LoadingModal } from '@/components/LoadingModal'
 
 export const TasksList = () => {
   const router = useRouter()
   const locale = useLocale()
   const { tasks, isLoading, isError, loadMore } = useTasksLogic()
+
   const t = useTranslations('signedIn.task.list')
 
   const handleGoToTask = (id: string) => {
@@ -19,11 +21,7 @@ export const TasksList = () => {
   }
 
   if (isLoading && tasks.length === 0) {
-    return (
-      <div className='text-formPlaceholder flex w-full items-center justify-center py-8 text-sm'>
-        {t('loading')}
-      </div>
-    )
+    return <LoadingModal />
   }
 
   if (isError) {

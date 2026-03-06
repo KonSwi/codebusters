@@ -18,7 +18,7 @@ type Item = {
   key:
     | 'dashboard'
     | 'ranking'
-    | 'lessons'
+    | 'modules'
     | 'calendar'
     | 'task'
     | 'cssTask'
@@ -31,7 +31,7 @@ type Item = {
 const ITEMS: Item[] = [
   { key: 'dashboard', href: '/dashboard', icon: 'dashboard' },
   { key: 'ranking', href: '/ranking', icon: 'ranking' },
-  { key: 'lessons', href: '/lessons', icon: 'lessons' },
+  { key: 'modules', href: '/modules', icon: 'modules' },
   { key: 'calendar', href: '/calendar', icon: 'calendar' },
   { key: 'task', href: '/task', icon: 'task' },
   { key: 'cssTask', href: '/css-task', icon: 'css-task' },

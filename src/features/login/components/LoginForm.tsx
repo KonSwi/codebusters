@@ -16,10 +16,11 @@ import { Button } from '@/components'
 import { getLoginSchema, LoginSchema } from '../schema'
 
 export const LoginForm = () => {
-  const t = useTranslations('login')
   const locale = useLocale()
   const router = useRouter()
   const { enqueueSnackbar } = useSnackbar()
+
+  const t = useTranslations('login')
 
   const registerHref = `/${locale}/register`
   const dashboardHref = `/${locale}/dashboard`
@@ -48,7 +49,7 @@ export const LoginForm = () => {
     }
 
     if (result.error) {
-      const key = `errors.${result.error}` as const
+      const key = `errors.${result.error}`
       const message = t.has(key) ? t(key) : t('errors.default')
       enqueueSnackbar(message, { variant: 'error' })
       return

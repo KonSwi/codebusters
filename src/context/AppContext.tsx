@@ -5,6 +5,7 @@ import { SnackbarProvider } from 'notistack'
 import { SessionProvider } from 'next-auth/react'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { LoadingModal } from '@/components/LoadingModal'
 
 import { ErrorBoundary } from './ErrorBoundary'
 
@@ -13,11 +14,7 @@ type Props = {
 }
 
 const LoadingFallback = () => {
-  return (
-    <div className='bg-dark flex min-h-screen items-center justify-center'>
-      <div className='bg-gray rounded-lg p-8 text-2xl'>Loading...</div>
-    </div>
-  )
+  return <LoadingModal />
 }
 
 export const AppContext: React.FC<Props> = ({ children }) => {

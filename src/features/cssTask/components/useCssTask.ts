@@ -1,6 +1,11 @@
 'use client'
 
-import { useQuery, type UseQueryResult } from '@tanstack/react-query'
+import {
+  useMutation,
+  useQuery,
+  useQueryClient,
+  type UseQueryResult,
+} from '@tanstack/react-query'
 
 export type CssTaskData = {
   id: string
@@ -63,4 +68,17 @@ export const submitCssSolution = async ({
   }
 
   return response.json()
+}
+
+export const useSubmitCssSolution = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation<SubmitCssSolutionResponse, Error, SubmitCssSolutionParams>(
+    {
+      mutationFn: submitCssSolution,
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ['activities'] })
+      },
+    }
+  )
 }

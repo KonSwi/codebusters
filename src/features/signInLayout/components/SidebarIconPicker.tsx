@@ -3,7 +3,7 @@ import React from 'react'
 export type SidebarIconName =
   | 'dashboard'
   | 'ranking'
-  | 'lessons'
+  | 'modules'
   | 'calendar'
   | 'task'
   | 'css-task'
@@ -52,7 +52,7 @@ export const SidebarIconPicker: React.FC<Props> = ({
         </svg>
       )
 
-    case 'lessons':
+    case 'modules':
       return (
         <svg
           className={className}

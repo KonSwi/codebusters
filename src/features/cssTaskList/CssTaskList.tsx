@@ -9,6 +9,7 @@ import { AddIcon } from '@/icons'
 import { TasksListElement } from '@/components/tasksList'
 import type { JavascriptAssignment } from '@/features/jsTaskList/useJSTasksLogic'
 import { TasksList } from '@/components/tasksList/TasksList'
+import { LoadingModal } from '@/components/LoadingModal'
 
 type CssTask = {
   id: string
@@ -99,11 +100,7 @@ export const CssTaskList = () => {
   }
 
   if (isLoading && tasks.length === 0) {
-    return (
-      <div className='text-formPlaceholder flex w-full items-center justify-center py-8 text-sm'>
-        {t('list.loading')}
-      </div>
-    )
+    return <LoadingModal />
   }
 
   if (isError) {

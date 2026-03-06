@@ -16,6 +16,7 @@ type Variant =
   | 'orange'
   | 'success'
   | 'testResult'
+  | 'orangeBlack'
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant
@@ -63,6 +64,9 @@ export const Button: React.FC<ButtonProps> = ({
 
           'bg-orange w-31.5 h-10 rounded-lg px-5 py-2 text-white':
             variant === 'orange',
+
+          'bg-orange w-31.5 text-gray h-10 px-5 py-2':
+            variant === 'orangeBlack',
 
           'bg-green h-10 rounded-lg px-5 py-2.5 font-medium text-white':
             variant === 'success',

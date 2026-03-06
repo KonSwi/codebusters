@@ -30,7 +30,7 @@ export const TaskPanel: React.FC<TaskPanelProps> = ({
   return (
     <section
       className={clsx(
-        'bg-gray flex h-full min-h-0 flex-col overflow-hidden rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.6)]',
+        'bg-gray flex h-full min-h-0 w-full max-w-full flex-col overflow-hidden rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.6)]',
         className
       )}
     >

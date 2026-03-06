@@ -142,6 +142,7 @@ export const useRunJsTask = (taskId?: string) => {
       if (variables.variant === 'solution' && data.allPassed) {
         queryClient.invalidateQueries({ queryKey: ['js-task'] })
         queryClient.invalidateQueries({ queryKey: ['js-tasks'] })
+        queryClient.invalidateQueries({ queryKey: ['activities'] })
       }
     },
   })
